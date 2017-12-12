@@ -5,20 +5,15 @@ import fetch from 'isomorphic-fetch';
 
 class Services {
    constructor() {
-      this.host = "localhost:8080"
-      this.type = ""; // go, java, or ruby
+      this.service = "/go/";
    }
 
-   setHost(host) {
-      this.host = host;
-   }
-
-   hostify(url) {
-      return "http://" + this.host + url;
+   setService(service) {
+      this.service = "/" + service + "/";
    }
 
    listStandardDeviations() {
-      return fetch(this.hostify('/standardDeviation')).then(sds => sds.json());
+      return fetch(this.service + 'standardDeviation').then(sds => sds.json());
    }
 
    saveStandardDeviation(numbers) {

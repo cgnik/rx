@@ -1,0 +1,6 @@
+[submodule "src/kotlin"]
+	path = src/kotlin
+	url = git@cgnik.github.com:cgnik/rx-k
+[submodule "src/java"]
+	path = src/java
+	url = git@cgnik.github.com:cgnik/rx-java

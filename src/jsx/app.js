@@ -10,7 +10,7 @@ import './style/main.scss'
 class App extends React.Component {
    constructor(props) {
       super(props)
-      this.state = {server: 'localhost:3000', standardDeviations: []}
+      this.state = {service: 'go', standardDeviations: []}
       this.refetch()
    }
 
@@ -22,10 +22,10 @@ class App extends React.Component {
       });
    }
 
-   serviceChanged(server) {
-      this.setState({server: server})
-      service.setHost(server)
-      this.refetch()
+   serviceChanged(serviceName) {
+      this.setState({service: serviceName});
+      service.setService(serviceName);
+      this.refetch();
    }
 
    saveStandardDeviation(numberList) {
